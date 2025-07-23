@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: node-app-ai-backend-test-2
+  description: Node app named node-app-ai-backend-test-2
+  annotations:
+    github.com/project-slug: arjun-mindsprint-udemy/node-app-ai-backend-test-2
+    backstage.io/techdocs-ref: dir:.
+    jenkins.io/job-full-name: node-app-test-folder/node-app-ai-backend-test-2
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
+  dependsOn:
+    - component:llm-module
+    - component:data-prep-module
+    - component:embedding-module
+    - component:rerank-module
+    - component:retrieval-module
+    - component:vectordb-module
+  providesApis:
+    - node-app-ai-backend-test-2-api
